@@ -9,55 +9,39 @@ import {
   Car,
   BookOpen,
 } from "lucide-react";
+import Title from "../ui/Title";
 
 const categories = [
-  { name: "Fashion", icon: Shirt, color: "var(--primary)" },
-  { name: "Electronics", icon: Smartphone, color: "var(--secondary)" },
-  { name: "Groceries", icon: ShoppingBag, color: "var(--accent)" },
+  { name: "Fashion", icon: Shirt, color: "#5B2EFF" },
+  { name: "Electronics", icon: Smartphone, color: "#10B981" },
+  { name: "Groceries", icon: ShoppingBag, color: "#F59E0B" },
   { name: "Home", icon: Home, color: "#F7C948" }, // accent-gold
-  { name: "Gaming", icon: Gamepad2, color: "var(--primary-dark)" },
+  { name: "Gaming", icon: Gamepad2, color: "#8B5CF6" },
   { name: "Fitness", icon: Dumbbell, color: "#FF5C5C" }, // accent-red
-  { name: "Automobile", icon: Car, color: "var(--secondary)" },
-  { name: "Books", icon: BookOpen, color: "var(--primary-light)" },
+  { name: "Automobile", icon: Car, color: "#6366F1" },
+  { name: "Books", icon: BookOpen, color: "#3B82F6" },
 ];
 
 const CategorySection = () => {
   return (
-    <section
-      className="w-full py-12 px-4 md:px-10"
-      style={{ background: "var(--background)" }}
-    >
+    <section className="w-full py-9 px-4 md:px-10">
       {/* Header */}
-      <div className="text-center mb-10">
-        <h2
-          className="text-2xl md:text-3xl font-bold"
-          style={{ color: "var(--text)" }}
-        >
-          Explore Categories
-        </h2>
-
-        <p
-          className="mt-2"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          Find products from every category in one place
-        </p>
-      </div>
+     <Title
+  title="Welcome to Our Store"
+  description="Find the best products at the best prices"
+  
+/>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
+      <div className="grid mt-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
         {categories.map((cat, index) => {
           const Icon = cat.icon;
 
           return (
             <div
               key={index}
-              className="group cursor-pointer rounded-2xl p-4 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-1"
-              style={{
-                background: "var(--surface)",
-                border: "1px solid var(--border)",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-              }}
+              className="group bg-white border border-border cursor-pointer rounded-2xl p-4 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-1"
+           
             >
               {/* Icon Circle */}
               <div
@@ -69,7 +53,7 @@ const CategorySection = () => {
 
               {/* Name */}
               <p
-                className="mt-3 text-sm font-medium transition group-hover:text-[var(--primary)]"
+                className="mt-3 text-sm font-medium transition group-hover:text-primary"
                 style={{ color: "var(--text)" }}
               >
                 {cat.name}

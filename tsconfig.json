@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "tailwind.config.js", "src/app/products/page.tsx"  ],
+, "tailwind.config.js", "src/app/(main)/products/page.tsx"  ],
   "exclude": ["node_modules"]
 }

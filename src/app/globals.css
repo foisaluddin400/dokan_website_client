@@ -1,61 +1,78 @@
 @import "tailwindcss";
 
-:root {
-  --background: #F7F8FC;
-  --foreground: #0F172A;
+/* =========================
+   🎨 THEME TOKENS (Tailwind v4)
+========================= */
+@theme {
+  /* BACKGROUND & FOREGROUND */
+  --color-background:       #F7F8FC;
+  --color-foreground:       #0F172A;
 
   /* PRIMARY */
-  --primary: #5B2EFF;
-  --primary-dark: #3B1EDB;
-  --primary-light: #E9E5FF;
+  --color-primary:          #5B2EFF;
+  --color-primary-dark:     #3B1EDB;
+  --color-primary-light:    #E9E5FF;
 
   /* SECONDARY */
-  --secondary: #1E3A8A;
-  --secondary-light: #DBEAFE;
+  --color-secondary:        #1E3A8A;
+  --color-secondary-light:  #DBEAFE;
 
   /* ACCENTS */
-  --accent: #00F5A0;
-  --accent-red: #FF5C5C;
-  --accent-gold: #F7C948;
+  --color-accent:           #00F5A0;
+  --color-accent-red:       #FF5C5C;
+  --color-accent-gold:      #F7C948;
 
   /* SURFACE */
-  --surface: #F8F9FB;
-  --surface-2: #F1F3F9;
+  --color-surface:          #F8F9FB;
+  --color-surface-2:        #F1F3F9;
 
   /* TEXT */
-  --text: #0F172A;
-  --text-secondary: #475569;
-  --text-muted: #94A3B8;
+  --color-text:             #0F172A;
+  --color-text-secondary:   #475569;
+  --color-text-muted:       #94A3B8;
 
   /* BORDER */
-  --border: #E2E8F0;
-  --divider: #F1F5F9;
+  --color-border:           #E2E8F0;
+  --color-divider:          #F1F5F9;
 
   /* STATUS */
-  --success: #10B981;
-  --success-light: #D1FAE5;
+  --color-success:          #10B981;
+  --color-success-light:    #D1FAE5;
 
-  --error: #EF4444;
-  --error-light: #FEE2E2;
+  --color-error:            #EF4444;
+  --color-error-light:      #FEE2E2;
 
-  --warning: #F59E0B;
-  --warning-light: #FEF3C7;
+  --color-warning:          #F59E0B;
+  --color-warning-light:    #FEF3C7;
 
-  /* DARK COLORS (optional use) */
-  --dark-bg: #0B0F1A;
-  --dark-card: #111827;
-  --dark-surface: #1F2937;
-  --dark-text: #F9FAFB;
+  /* DARK */
+  --color-dark-bg:          #0B0F1A;
+  --color-dark-card:        #111827;
+  --color-dark-surface:     #1F2937;
+  --color-dark-text:        #F9FAFB;
 }
 
-/* =========================
-   🌙 DARK MODE AUTO
-========================= */
+
 
 /* =========================
    🧾 BASE STYLES
 ========================= */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.15s ease-out;
 }

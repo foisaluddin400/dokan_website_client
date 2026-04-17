@@ -17,9 +17,9 @@ const StatsBar = () => {
   return (
     <section
       className="py-6"
-      style={{ background: "var(--background)" }}
+    
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 
           {features.map((item, index) => {
@@ -28,30 +28,27 @@ const StatsBar = () => {
             return (
               <div
                 key={index}
-                className="flex items-center justify-center gap-3 p-4 rounded-xl transition group"
-                style={{
-                  background: "var(--surface)",
-                  boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-                }}
+                className="flex items-center justify-center gap-3 p-4 rounded-xl transition group border border-border"
+              
               >
                 {/* Icon */}
                 <div
-                  className="w-10 h-10 flex items-center justify-center rounded-full transition group-hover:bg-[var(--primary)]"
+                  className="w-10 h-10 flex items-center justify-center rounded-full transition group-hover:bg-primary"
                   style={{
                     background: "rgba(91, 46, 255, 0.1)", // primary light
                   }}
                 >
                   <Icon
                     size={18}
-                    style={{ color: "var(--primary)" }}
-                    className="group-hover:text-white"
+                    
+                    className="group-hover:text-accent text-primary transition"
                   />
                 </div>
 
                 {/* Text */}
                 <p
-                  className="text-sm font-medium text-center md:text-left"
-                  style={{ color: "var(--text)" }}
+                  className="text-sm text-text font-medium text-center md:text-left"
+                  
                 >
                   {item.title}
                 </p>

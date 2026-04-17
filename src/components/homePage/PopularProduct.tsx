@@ -1,5 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
+import Title from "../ui/Title";
 
 const products = [
   {
@@ -52,36 +53,22 @@ const PopularProduct = () => {
   return (
     <section
       className="w-full py-10 px-4 md:px-10"
-      style={{ background: "var(--background)" }}
+     
     >
       {/* Header */}
-      <div className="text-center mb-8">
-        <h2
-          className="text-xl md:text-2xl font-bold"
-          style={{ color: "var(--text)" }}
-        >
-          Popular Products
-        </h2>
-
-        <p
-          className="text-sm mt-1"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          Best selling products from top stores
-        </p>
-      </div>
+    <Title
+  title="Popular Products"
+  description="Check out the best-selling products that our customers love"
+  
+/>
 
       {/* Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {products.map((product, index) => (
           <div
             key={index}
-            className="group rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1"
-            style={{
-              background: "var(--surface)",
-              border: "1px solid var(--border)",
-              boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-            }}
+            className="group rounded-xl bg-white border border-border overflow-hidden transition-all duration-300 hover:-translate-y-1"
+          
           >
             {/* Image */}
             <div className="overflow-hidden m-3 rounded-xl">
@@ -96,16 +83,16 @@ const PopularProduct = () => {
             <div className="p-3">
               {/* Title */}
               <h3
-                className="text-sm font-semibold line-clamp-1"
-                style={{ color: "var(--text)" }}
+                className="text-sm text-text font-semibold line-clamp-1"
+           
               >
                 {product.title}
               </h3>
 
               {/* Price */}
               <p
-                className="text-sm font-bold mt-1"
-                style={{ color: "var(--primary)" }}
+                className="text-sm text-primary font-bold mt-1"
+              
               >
                 ৳ {product.price}
               </p>
@@ -114,31 +101,31 @@ const PopularProduct = () => {
               <div className="flex items-center justify-between mt-2 text-xs">
                 <div className="flex items-center gap-1">
                   <Star size={12} style={{ color: "#F7C948" }} />
-                  <span style={{ color: "var(--text-secondary)" }}>
+                  <span className="text-secondary">
                     {product.rating}
                   </span>
                 </div>
 
-                <span style={{ color: "var(--text-secondary)" }}>
+                <span className="text-secondary">
                   {product.sold} sold
                 </span>
               </div>
 
               {/* Store */}
               <div
-                className="flex items-center gap-2 mt-3 pt-2"
-                style={{ borderTop: "1px solid var(--border)" }}
+                className="flex items-center gap-2 border-t border-border mt-3 pt-2"
+               
               >
                 <img
                   src={product.store.logo}
                   alt={product.store.name}
-                  className="w-5 h-5 rounded-full"
-                  style={{ border: "1px solid var(--border)" }}
+                  className="w-5 h-5 rounded-full border border-border object-cover"
+             
                 />
 
                 <span
-                  className="text-xs truncate"
-                  style={{ color: "var(--text-secondary)" }}
+                  className="text-xs truncate text-secondary"
+                
                 >
                   {product.store.name}
                 </span>
