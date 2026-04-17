@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F8FC;
+  --foreground: #0F172A;
+
+  /* PRIMARY */
+  --primary: #5B2EFF;
+  --primary-dark: #3B1EDB;
+  --primary-light: #E9E5FF;
+
+  /* SECONDARY */
+  --secondary: #1E3A8A;
+  --secondary-light: #DBEAFE;
+
+  /* ACCENTS */
+  --accent: #00F5A0;
+  --accent-red: #FF5C5C;
+  --accent-gold: #F7C948;
+
+  /* SURFACE */
+  --surface: #F8F9FB;
+  --surface-2: #F1F3F9;
+
+  /* TEXT */
+  --text: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  /* BORDER */
+  --border: #E2E8F0;
+  --divider: #F1F5F9;
+
+  /* STATUS */
+  --success: #10B981;
+  --success-light: #D1FAE5;
+
+  --error: #EF4444;
+  --error-light: #FEE2E2;
+
+  --warning: #F59E0B;
+  --warning-light: #FEF3C7;
+
+  /* DARK COLORS (optional use) */
+  --dark-bg: #0B0F1A;
+  --dark-card: #111827;
+  --dark-surface: #1F2937;
+  --dark-text: #F9FAFB;
+}
+
+/* =========================
+   🌙 DARK MODE AUTO
+========================= */
+
+/* =========================
+   🧾 BASE STYLES
+========================= */
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
