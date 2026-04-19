@@ -32,96 +32,79 @@ const Resell = () => {
 
   return (
     <div className="min-h-screen mt-5">
-<div className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-border rounded-2xl p-6 md:flex md:items-center md:justify-between gap-6">
+      <div className="bg-gradient-to-br from-primary/10 to-secondary/10 border border-border rounded-2xl p-6 md:flex md:items-center md:justify-between gap-6">
+        {/* LEFT CONTENT */}
+        <div className="max-w-xl">
+          <h3 className="text-xl font-bold text-text mb-3">
+            Earn Without Investment 💸
+          </h3>
 
-  {/* LEFT CONTENT */}
-  <div className="max-w-xl">
+          <p className="text-sm text-text-secondary mb-4">
+            Subscribe, pick products, promote anywhere & earn profit without
+            stock.
+          </p>
 
-    <h3 className="text-xl font-bold text-text mb-3">
-      Earn Without Investment 💸
-    </h3>
+          {/* STEPS */}
+          <ul className="text-sm text-text-secondary space-y-2 mb-5">
+            <li>✔ Choose product from list</li>
+            <li>✔ Copy images & details</li>
+            <li>✔ Sell on Facebook / WhatsApp</li>
+            <li>✔ Keep your profit margin</li>
+          </ul>
 
-    <p className="text-sm text-text-secondary mb-4">
-      Subscribe, pick products, promote anywhere & earn profit without stock.
-    </p>
+          {/* BUTTONS */}
+          <div className="flex flex-wrap gap-3">
+            <button className="px-6 py-2 bg-gradient-to-br from-primary to-secondary text-white rounded-xl font-semibold hover:bg-primary-dark transition">
+              Subscribe Now (৳500)
+            </button>
 
-    {/* STEPS */}
-    <ul className="text-sm text-text-secondary space-y-2 mb-5">
-      <li>✔ Choose product from list</li>
-      <li>✔ Copy images & details</li>
-      <li>✔ Sell on Facebook / WhatsApp</li>
-      <li>✔ Keep your profit margin</li>
-    </ul>
-
-    {/* BUTTONS */}
-    <div className="flex flex-wrap gap-3">
-
-      <button className="px-6 py-2 bg-gradient-to-br from-primary to-secondary text-white rounded-xl font-semibold hover:bg-primary-dark transition">
-        Subscribe Now (৳500)
-      </button>
-
-      <button className="px-6 py-2 border border-border rounded-xl text-text hover:bg-surface transition">
-        View Demo Products
-      </button>
-
-    </div>
-
-  </div>
-
-  {/* RIGHT CARD */}
-  <div className="mt-6 md:mt-0">
-
-    <div className="bg-white border border-border rounded-xl p-5 text-center shadow-soft">
-
-      <p className="text-xs text-text-secondary">
-        Avg Monthly Earnings
-      </p>
-
-      <h2 className="text-2xl font-bold text-primary mt-1">
-        ৳15,000+
-      </h2>
-
-      <p className="text-xs text-text-muted mt-1">
-        Based on active resellers
-      </p>
-
-    </div>
-
-  </div>
-
-</div>
-    
-
-      <div className="md:grid md:grid-cols-12 mt-5 gap-3 mb-8">
-          {/* Search */}
-          <div className="w-full mb-3 md:mb-0 col-span-4 md:col-span-6 lg:col-span-8">
-            <Input placeholder="Search products..." />
-          </div>
-
-          {/* Category */}
-          <div className=" w-full col-span-6 md:col-span-6  lg:col-span-4 gap-3">
-            <div className="grid grid-cols-2 gap-3">
-              <Select
-                label="Category"
-                value="Mobile Phones"
-                options={[
-                  { label: "Electronics", value: "electronics" },
-                  { label: "Fashion", value: "fashion" },
-                  { label: "Home", value: "home" },
-                ]}
-              />
-
-              {/* Location */}
-              <Input placeholder="Search Location..." />
-            </div>
+            <button className="px-6 py-2 border border-border rounded-xl text-text hover:bg-surface transition">
+              View Demo Products
+            </button>
           </div>
         </div>
 
+        {/* RIGHT CARD */}
+        <div className="mt-6 md:mt-0">
+          <div className="bg-white border border-border rounded-xl p-5 text-center shadow-soft">
+            <p className="text-xs text-text-secondary">Avg Monthly Earnings</p>
 
+            <h2 className="text-2xl font-bold text-primary mt-1">৳15,000+</h2>
+
+            <p className="text-xs text-text-muted mt-1">
+              Based on active resellers
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="md:grid md:grid-cols-12 mt-5 gap-3 mb-8">
+        {/* Search */}
+        <div className="w-full mb-3 md:mb-0 col-span-4 md:col-span-6 lg:col-span-8">
+          <Input placeholder="Search products..." />
+        </div>
+
+        {/* Category */}
+        <div className=" w-full col-span-6 md:col-span-6  lg:col-span-4 gap-3">
+          <div className="grid grid-cols-2 gap-3">
+            <Select
+              label="Category"
+              value="Mobile Phones"
+              options={[
+                { label: "Electronics", value: "electronics" },
+                { label: "Fashion", value: "fashion" },
+                { label: "Home", value: "home" },
+              ]}
+            />
+
+            {/* Location */}
+            <Input placeholder="Search Location..." />
+          </div>
+        </div>
+      </div>
 
       {/* PRODUCT GRID */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-
         {products.map((p, index) => (
           <div
             key={index}
@@ -137,10 +120,7 @@ const Resell = () => {
 
             {/* CONTENT */}
             <div className="p-3">
-
-              <h3 className="text-sm font-semibold text-text">
-                {p.title}
-              </h3>
+              <h3 className="text-sm font-semibold text-text">{p.title}</h3>
 
               <p className="text-xs text-text-secondary mt-1">
                 Cost: ৳ {p.price}
@@ -150,9 +130,7 @@ const Resell = () => {
                 Sell: ৳ {p.sellPrice}
               </p>
 
-              <p className="text-xs text-success">
-                Profit: ৳ {p.profit}
-              </p>
+              <p className="text-xs text-success">Profit: ৳ {p.profit}</p>
 
               {/* BUTTON */}
               <button
@@ -169,11 +147,9 @@ const Resell = () => {
                   </>
                 )}
               </button>
-
             </div>
           </div>
         ))}
-
       </div>
 
       {/* CTA */}
@@ -182,7 +158,6 @@ const Resell = () => {
           Start Selling Now
         </button>
       </div>
-
     </div>
   );
 };
