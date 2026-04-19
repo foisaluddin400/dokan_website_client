@@ -113,7 +113,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen container mx-auto py-8">
-      <div className=" px-4 md:px-6">
+      <div className=" ">
         {/* Top Bar with Search & Filter Button */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="flex-1 relative">
@@ -247,7 +247,7 @@ const Products = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-white rounded-lg overflow-hidden border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
+                    className="bg-white rounded-lg overflow-hidden border border-border shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group"
                   >
                     <div className="relative overflow-hidden">
                       <img

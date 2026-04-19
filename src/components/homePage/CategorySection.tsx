@@ -24,13 +24,22 @@ const categories = [
 
 const CategorySection = () => {
   return (
-    <section className="w-full py-9 px-4 md:px-10">
+    <section className="w-full py-9 ">
       {/* Header */}
-     <Title
-  title="Welcome to Our Store"
-  description="Find the best products at the best prices"
-  
-/>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <div className="w-1 h-10 bg-accent-gold rounded-sm" />
+          <div>
+            <h1 className="text-xl font-semibold text-gray-900">
+              Category
+            </h1>
+            <p className="text-gray-400 text-sm">
+              {" "}
+              Discover the Category loved by our customers
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Grid */}
       <div className="grid mt-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
@@ -40,8 +49,7 @@ const CategorySection = () => {
           return (
             <div
               key={index}
-              className="group bg-white border border-border cursor-pointer rounded-2xl p-4 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-1"
-           
+              className="group bg-white border border-border shadow-[0_8px_24px_rgba(0,0,0,0.06)] cursor-pointer rounded-2xl p-4 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
               {/* Icon Circle */}
               <div

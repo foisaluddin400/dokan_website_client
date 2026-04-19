@@ -9,6 +9,8 @@ import {
   Heart,
   UserPlus,
   ShoppingBag,
+  Crown,
+  ShoppingBagIcon,
 } from "lucide-react";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
@@ -73,58 +75,60 @@ const ShopPage = () => {
   const [search, setSearch] = useState<string>("");
 
   const filtered = shopsData.filter((shop) =>
-    shop.name.toLowerCase().includes(search.toLowerCase())
+    shop.name.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
     <div className="min-h-screen  py-8">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-text">
-            Discover Trusted Shops
-          </h1>
-          <p className="text-text mt-2 text-lg">
-            Shop from the best sellers across Bangladesh
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full shadow-sm mb-4">
+            <ShoppingBagIcon className="text-yellow-500" size={28} />
+            <h1 className="text-4xl font-bold text-gray-900">Shops Hub</h1>
+          </div>
+          <p className="text-text-secondary text-lg max-w-md mx-auto">
+            Celebrate top referrers and sellers • Earn points by referring
+            friends
           </p>
         </div>
 
         {/* Search & Filters */}
-         <div className="md:grid md:grid-cols-12 gap-3 mb-8">
-        {/* Search */}
-        <div className="w-full mb-3 md:mb-0 col-span-4 md:col-span-6 lg:col-span-8">
-          <Input placeholder="Search products..." />
-        </div>
+        <div className="md:grid md:grid-cols-12 gap-3 mb-8">
+          {/* Search */}
+          <div className="w-full mb-3 md:mb-0 col-span-4 md:col-span-6 lg:col-span-8">
+            <Input placeholder="Search products..." />
+          </div>
 
-        {/* Category */}
-        <div className=" w-full col-span-6 md:col-span-6  lg:col-span-4 gap-3">
-          <div className="grid grid-cols-2 gap-3">
-            <Select
-              label="Category"
-              value="Mobile Phones"
-              options={[
-                { label: "Electronics", value: "electronics" },
-                { label: "Fashion", value: "fashion" },
-                { label: "Home", value: "home" },
-              ]}
-            />
+          {/* Category */}
+          <div className=" w-full col-span-6 md:col-span-6  lg:col-span-4 gap-3">
+            <div className="grid grid-cols-2 gap-3">
+              <Select
+                label="Category"
+                value="Mobile Phones"
+                options={[
+                  { label: "Electronics", value: "electronics" },
+                  { label: "Fashion", value: "fashion" },
+                  { label: "Home", value: "home" },
+                ]}
+              />
 
-            {/* Location */}
-           <Input placeholder="Search Location..." />
+              {/* Location */}
+              <Input placeholder="Search Location..." />
+            </div>
           </div>
         </div>
-      </div>
 
         {/* Shops Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
           {filtered.map((shop) => (
             <div
               key={shop.id}
-              className="bg-white rounded-lg overflow-hidden border border-border hover:shadow-xl transition-all duration-300 group"
+              className="bg-white rounded-lg overflow-hidden border border-border shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group"
             >
               {/* Cover Image */}
               <div className="relative h-48">
-                 <div className="absolute inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-xs font-medium px-2  py-1 rounded-sm">
+                <div className="absolute inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-xs font-medium px-2  py-1 rounded-sm">
                   🏆 {shop.reward}
                 </div>
                 <img
@@ -146,7 +150,9 @@ const ShopPage = () => {
               <div className="pt-12 pb-6 px-6">
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="font-semibold text-xl text-[#0F172A]">{shop.name}</h3>
+                    <h3 className="font-semibold text-xl text-[#0F172A]">
+                      {shop.name}
+                    </h3>
                     <p className="text-sm text-text-secondary flex items-center gap-1 mt-1">
                       <MapPin size={15} /> {shop.location}
                     </p>
@@ -159,7 +165,9 @@ const ShopPage = () => {
                 </div>
 
                 <div className="flex items-center gap-2 mt-3 text-sm text-text-secondary">
-                  <span className="font-medium text-primary">{shop.category}</span>
+                  <span className="font-medium text-primary">
+                    {shop.category}
+                  </span>
                   <span>•</span>
                   <span>{shop.products} Products</span>
                 </div>
@@ -173,11 +181,15 @@ const ShopPage = () => {
                     <p className="text-xs text-text-secondary">Sold</p>
                   </div>
                   <div>
-                    <p className="text-sm  text-text-secondary">{shop.followers.toLocaleString()}</p>
+                    <p className="text-sm  text-text-secondary">
+                      {shop.followers.toLocaleString()}
+                    </p>
                     <p className="text-xs text-text-secondary">Followers</p>
                   </div>
                   <div>
-                    <p className="text-sm  text-text-secondary">{shop.products}</p>
+                    <p className="text-sm  text-text-secondary">
+                      {shop.products}
+                    </p>
                     <p className="text-xs text-text-secondary">Products</p>
                   </div>
                 </div>
@@ -204,19 +216,27 @@ const ShopPage = () => {
                 </div>
 
                 {/* Reward Badge */}
-               
 
                 {/* Action Buttons */}
                 <div className="flex justify-between items-center mt-8">
-                  <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg  hover:bg-primary/90 transition-all active:scale-95">
+                  <button className="flex items-center gap-2 bg-gradient-to-br from-primary to-secondary text-white px-4 py-2 rounded-lg  hover:bg-primary/90 transition-all active:scale-95">
                     <UserPlus size={18} />
                     Follow
                   </button>
 
                   <div className="flex gap-4 text-gray-500">
-                    <MessageCircle size={22} className="cursor-pointer hover:text-primary transition" />
-                    <Heart size={22} className="cursor-pointer hover:text-red-500 transition" />
-                    <ShoppingBag size={22} className="cursor-pointer hover:text-primary transition" />
+                    <MessageCircle
+                      size={22}
+                      className="cursor-pointer hover:text-primary transition"
+                    />
+                    <Heart
+                      size={22}
+                      className="cursor-pointer hover:text-red-500 transition"
+                    />
+                    <ShoppingBag
+                      size={22}
+                      className="cursor-pointer hover:text-primary transition"
+                    />
                   </div>
                 </div>
               </div>

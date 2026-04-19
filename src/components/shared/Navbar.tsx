@@ -84,7 +84,7 @@ const Navbar = () => {
         <div className={` navbar-inner-border transition-colors duration-500
           ${isScrolled ? 'border-white/20' : 'border-gray-200'}`}
         >
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="container mx-auto ">
             <div className="h-16 flex items-center justify-between">
 
               {/* Logo */}
@@ -132,7 +132,7 @@ const Navbar = () => {
                 {/* Rewards — desktop */}
                 <Link
                   href="/rewards"
-                  className="hidden md:flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-5 py-2.5 rounded-2xl font-medium text-sm hover:from-amber-600 hover:to-yellow-600 transition-all shadow-sm"
+                  className="hidden md:flex items-center gap-2 bg-gradient-to-br from-accent-gold to-warning text-white px-5 py-2.5 rounded-2xl font-medium text-sm hover:from-amber-600 hover:to-yellow-600 transition-all shadow-sm"
                 >
                   <Award size={18} />
                   Rewards
@@ -169,7 +169,7 @@ const Navbar = () => {
                         <p className="font-semibold">Rakibul Islam</p>
                         <p className="text-xs text-gray-500">rakib@example.com</p>
                       </div>
-                      <Link href="/profile"  className="block px-6 py-3 hover:bg-gray-50/80 text-sm">My Profile</Link>
+                      <Link href="/profile"  className="block px-6 py-3 hover:bg-gray-50/80 text-sm">My Dashboard</Link>
                       <Link href="/orders"   className="block px-6 py-3 hover:bg-gray-50/80 text-sm">My Orders</Link>
                       <Link href="/wishlist" className="block px-6 py-3 hover:bg-gray-50/80 text-sm">Wishlist</Link>
                       <div className="border-t border-gray-100 my-1" />
@@ -213,7 +213,7 @@ const Navbar = () => {
 
         {/* ── Bottom Nav — desktop only ──────────────────────── */}
         <div className={`hidden md:block   transition-colors duration-500
-          ${isScrolled ? 'border-border' : 'border-t border-border'}`}
+          ${isScrolled ? 'border-border ' : 'border-t border-border '}`}
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center h-14 text-sm font-medium text-black overflow-x-auto">

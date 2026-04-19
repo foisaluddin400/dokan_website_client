@@ -51,24 +51,29 @@ const products = [
 
 const PopularProduct = () => {
   return (
-    <section
-      className="w-full py-10 px-4 md:px-10"
-     
-    >
+    <section className="w-full py-10 ">
       {/* Header */}
-    <Title
-  title="Popular Products"
-  description="Check out the best-selling products that our customers love"
-  
-/>
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <div className="w-1 h-10 bg-accent-gold rounded-sm" />
+          <div>
+            <h1 className="text-xl font-semibold text-gray-900">
+              Popular Products
+            </h1>
+            <p className="text-gray-400 text-sm">
+              {" "}
+              Discover the most popular products loved by our customers
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {products.map((product, index) => (
           <div
             key={index}
-            className="group rounded-xl bg-white border border-border overflow-hidden transition-all duration-300 hover:-translate-y-1"
-          
+            className="group rounded-xl bg-white border border-border shadow-[0_8px_24px_rgba(0,0,0,0.06)] overflow-hidden transition-all duration-300 hover:-translate-y-1"
           >
             {/* Image */}
             <div className="overflow-hidden m-3 rounded-xl">
@@ -82,18 +87,12 @@ const PopularProduct = () => {
             {/* Content */}
             <div className="p-3">
               {/* Title */}
-              <h3
-                className="text-sm text-text font-semibold line-clamp-1"
-           
-              >
+              <h3 className="text-sm text-text font-semibold line-clamp-1">
                 {product.title}
               </h3>
 
               {/* Price */}
-              <p
-                className="text-sm text-primary font-bold mt-1"
-              
-              >
+              <p className="text-sm text-primary font-bold mt-1">
                 ৳ {product.price}
               </p>
 
@@ -101,32 +100,21 @@ const PopularProduct = () => {
               <div className="flex items-center justify-between mt-2 text-xs">
                 <div className="flex items-center gap-1">
                   <Star size={12} style={{ color: "#F7C948" }} />
-                  <span className="text-secondary">
-                    {product.rating}
-                  </span>
+                  <span className="text-secondary">{product.rating}</span>
                 </div>
 
-                <span className="text-secondary">
-                  {product.sold} sold
-                </span>
+                <span className="text-secondary">{product.sold} sold</span>
               </div>
 
               {/* Store */}
-              <div
-                className="flex items-center gap-2 border-t border-border mt-3 pt-2"
-               
-              >
+              <div className="flex items-center gap-2 border-t border-border mt-3 pt-2">
                 <img
                   src={product.store.logo}
                   alt={product.store.name}
                   className="w-5 h-5 rounded-full border border-border object-cover"
-             
                 />
 
-                <span
-                  className="text-xs truncate text-secondary"
-                
-                >
+                <span className="text-xs truncate text-secondary">
                   {product.store.name}
                 </span>
               </div>

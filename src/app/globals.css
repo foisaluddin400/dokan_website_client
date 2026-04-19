@@ -76,3 +76,31 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.15s ease-out;
 }
+
+
+
+.hero-main {
+  flex: 7;
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 60%, #9B59FF 100%);
+  border-radius: var(--radius);
+  padding: 20px 16px;
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
+.hero-main::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.hero-main::after {
+  content: '';
+  position: absolute;
+  bottom: -30px; right: 20px;
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  background: rgba(0,245,160,0.12);
+}

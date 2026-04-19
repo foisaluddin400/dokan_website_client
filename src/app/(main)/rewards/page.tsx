@@ -87,7 +87,7 @@ const topSellers = [
 const RewardsPage = () => {
   return (
     <div className="min-h-screen  py-10">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="">
         
         {/* Header */}
         <div className="text-center mb-12">
