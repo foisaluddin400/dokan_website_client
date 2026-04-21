@@ -25,7 +25,11 @@ export default function DashboardLayout({
   const menu = [
     { name: "Overview", href: "/dashboard", icon: Home },
     { name: "Orders", href: "/dashboard/order", icon: ShoppingBag },
-     { name: "Product", href: "/dashboard/product_management", icon: ShoppingBag },
+    {
+      name: "Product",
+      href: "/dashboard/product_management",
+      icon: ShoppingBag,
+    },
     { name: "Wishlist", href: "/dashboard/wishlist", icon: Heart },
     { name: "Rewards", href: "/dashboard/rewards", icon: Gift },
     { name: "Profile", href: "/dashboard/profile", icon: User },
@@ -42,17 +46,20 @@ export default function DashboardLayout({
         `}
       >
         {/* Logo / Header */}
-      <Link href={'/'}>  <div className="px-8 py-8 border-b border-gray-100 flex-shrink-0">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-indigo-600 rounded-2xl flex items-center justify-center">
-              <span className="text-white font-bold text-2xl">S</span>
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Shopify</h1>
-              <p className="text-xs text-gray-500 -mt-1">Seller Dashboard</p>
+        <Link href={"/"}>
+          {" "}
+          <div className="px-8 py-8 border-b border-gray-100 flex-shrink-0">
+            <div className="flex items-center gap-3">
+              <div className="w-9 h-9 bg-indigo-600 rounded-2xl flex items-center justify-center">
+                <span className="text-white font-bold text-2xl">S</span>
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-gray-900">Shopify</h1>
+                <p className="text-xs text-gray-500 -mt-1">Seller Dashboard</p>
+              </div>
             </div>
           </div>
-        </div></Link>
+        </Link>
 
         {/* Navigation - Scrollable if needed, but usually fits */}
         <nav className="flex-1 px-4 py-6 overflow-y-auto">
@@ -68,15 +75,16 @@ export default function DashboardLayout({
                   onClick={() => setOpen(false)}
                   className={`
                     flex items-center gap-3 px-5 py-3.5 rounded-2xl text-sm font-medium transition-all
-                    ${isActive 
-                      ? "bg-indigo-600 text-white shadow-md" 
-                      : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                    ${
+                      isActive
+                        ? "bg-indigo-600 text-white shadow-md"
+                        : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                     }
                   `}
                 >
-                  <Icon 
-                    size={20} 
-                    className={isActive ? "text-white" : "text-gray-500"} 
+                  <Icon
+                    size={20}
+                    className={isActive ? "text-white" : "text-gray-500"}
                   />
                   {item.name}
                 </Link>
@@ -96,7 +104,6 @@ export default function DashboardLayout({
 
       {/* ====================== MAIN CONTENT AREA ====================== */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        
         {/* Top Navbar */}
         <header className="bg-white border-b border-gray-200 h-16 flex items-center px-6 md:px-8 flex-shrink-0">
           <button
@@ -108,9 +115,10 @@ export default function DashboardLayout({
 
           <div className="flex-1 flex justify-end items-center gap-4">
             <div className="hidden md:block text-sm text-gray-500">
-              Welcome back, <span className="font-semibold text-gray-900">Rakibul</span>
+              Welcome back,{" "}
+              <span className="font-semibold text-gray-900">Rakibul</span>
             </div>
-            
+
             <div className="w-9 h-9 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 font-semibold">
               RK
             </div>
@@ -118,14 +126,12 @@ export default function DashboardLayout({
         </header>
 
         {/* Scrollable Main Content */}
-        <main className="flex-1 overflow-auto p-3 bg-gray-50">
-          {children}
-        </main>
+        <main className="flex-1 overflow-auto p-3 bg-gray-50">{children}</main>
       </div>
 
       {/* Mobile Overlay */}
       {open && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
           onClick={() => setOpen(false)}
         />
