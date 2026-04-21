@@ -170,7 +170,7 @@ const Navbar = () => {
                         <p className="text-xs text-gray-500">rakib@example.com</p>
                       </div>
                       <Link href="/dashboard"  className="block px-6 py-3 hover:bg-gray-50/80 text-sm">My Dashboard</Link>
-                      <Link href="/orders"   className="block px-6 py-3 hover:bg-gray-50/80 text-sm">My Orders</Link>
+                      <Link href="/my_profile"   className="block px-6 py-3 hover:bg-gray-50/80 text-sm">My Profile</Link>
                       <Link href="/wishlist" className="block px-6 py-3 hover:bg-gray-50/80 text-sm">Wishlist</Link>
                        <Link href="/rewards"   className="block px-6 py-3 hover:bg-gray-50/80 text-sm">My Rewards</Link>
                       <div className="border-t border-gray-100 my-1" />

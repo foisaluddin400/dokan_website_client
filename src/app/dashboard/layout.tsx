@@ -24,7 +24,8 @@ export default function DashboardLayout({
 
   const menu = [
     { name: "Overview", href: "/dashboard", icon: Home },
-    { name: "Orders", href: "/dashboard/orders", icon: ShoppingBag },
+    { name: "Orders", href: "/dashboard/order", icon: ShoppingBag },
+     { name: "Product", href: "/dashboard/product_management", icon: ShoppingBag },
     { name: "Wishlist", href: "/dashboard/wishlist", icon: Heart },
     { name: "Rewards", href: "/dashboard/rewards", icon: Gift },
     { name: "Profile", href: "/dashboard/profile", icon: User },
@@ -41,7 +42,7 @@ export default function DashboardLayout({
         `}
       >
         {/* Logo / Header */}
-        <div className="px-8 py-8 border-b border-gray-100 flex-shrink-0">
+      <Link href={'/'}>  <div className="px-8 py-8 border-b border-gray-100 flex-shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 bg-indigo-600 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-2xl">S</span>
@@ -51,7 +52,7 @@ export default function DashboardLayout({
               <p className="text-xs text-gray-500 -mt-1">Seller Dashboard</p>
             </div>
           </div>
-        </div>
+        </div></Link>
 
         {/* Navigation - Scrollable if needed, but usually fits */}
         <nav className="flex-1 px-4 py-6 overflow-y-auto">
@@ -117,7 +118,7 @@ export default function DashboardLayout({
         </header>
 
         {/* Scrollable Main Content */}
-        <main className="flex-1 overflow-auto p-6 md:p-8 bg-gray-50">
+        <main className="flex-1 overflow-auto p-3 bg-gray-50">
           {children}
         </main>
       </div>
